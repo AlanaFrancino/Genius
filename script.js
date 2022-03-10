@@ -20,7 +20,9 @@ let shuffleOrder = () => {
 
     for(let i in order) {
         let elementColor = createColorElement(order[i]);
-        lightColor(elementColor, Number(i) + 1);
+        setTimeout(() => {
+            lightColor(elementColor, Number(i) + 1);
+        }, 500);
     }
 }
 
@@ -29,10 +31,10 @@ let lightColor = (element, number) => {
     number = number * 500;
     setTimeout(() => {
         element.classList.add('selected');
-    }, number - 250);
+    }, number - 200);
     setTimeout(() => {
         element.classList.remove('selected');
-    });
+    }, number + 100);
 }
 
 //checa se os botoes clicados são os mesmos da ordem gerada no jogo
